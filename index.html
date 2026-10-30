@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Am Really So Sorry, My Princess 👑</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Fredoka (Bold Rounded Heading) & Quicksand (Soft Clean Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --plum-dark: #6D2E46;
+            --plum-text: #4A2535;
+            --rose-border: #D88C9A;
+            --pink-glow: rgba(255, 107, 149, 0.55);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--plum-text);
+            /* Exact Soft Pastel Pink, Cream & Lavender Mesh Gradient */
+            background-color: #FFF9F5;
+            background-image: 
+                radial-gradient(at 12% 18%, #FDEEF4 0px, transparent 55%),
+                radial-gradient(at 88% 22%, #F3E5F5 0px, transparent 55%),
+                radial-gradient(at 50% 50%, #FFF0F5 0px, transparent 65%),
+                radial-gradient(at 20% 85%, #FFF9F5 0px, transparent 55%),
+                radial-gradient(at 85% 88%, #F8E8F8 0px, transparent 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Rounded Display Typography */
+        .font-heading {
+            font-family: 'Fredoka', sans-serif;
+            color: var(--plum-dark);
+            letter-spacing: -0.01em;
+        }
+
+        /* Double Soft-Rose Border Avatar Frame */
+        .avatar-outer-ring {
+            width: 168px;
+            height: 168px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            border: 4.5px solid #D88C9A;
+            padding: 6px;
+            box-shadow: 
+                0 14px 35px rgba(109, 46, 70, 0.12),
+                0 0 0 6px rgba(255, 255, 255, 0.65);
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .avatar-outer-ring:hover {
+            transform: scale(1.03);
+        }
+
+        .avatar-inner-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #F3C6D0;
+            overflow: hidden;
+            position: relative;
+            background: radial-gradient(circle at 50% 35%, #FCE4EC 0%, #F3D1DC 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        /* Tilted Royal Crown Perched on Top-Left */
+        .crown-badge {
+            position: absolute;
+            top: -36px;
+            left: -22px;
+            width: 86px;
+            height: 86px;
+            z-index: 20;
+            pointer-events: none;
+            filter: drop-shadow(0 6px 10px rgba(109, 46, 70, 0.16));
+            animation: crownFloat 3.6s ease-in-out infinite;
+        }
+
+        @keyframes crownFloat {
+            0%, 100% { transform: translateY(0px) rotate(-22deg); }
+            50% { transform: translateY(-5px) rotate(-18deg); }
+        }
+
+        /* Dashed Pill Badge ("yes u, My Princess") */
+        .princess-pill {
+            background: linear-gradient(180deg, #FDE8F0 0%, #FADCE8 100%);
+            border: 2px dashed var(--rose-border);
+            border-radius: 9999px;
+            padding: 8px 30px;
+            color: var(--plum-dark);
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(216, 140, 154, 0.18);
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .princess-pill:hover {
+            transform: scale(1.04);
+        }
+
+        /* Glowing Pill-Shaped Gradient CTA Button */
+        .cta-heart-btn {
+            position: relative;
+            background: linear-gradient(180deg, #FF94B2 0%, #FF6B95 50%, #F85784 100%);
+            color: #FFFFFF;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            border: 2.5px solid rgba(255, 215, 228, 0.9);
+            border-radius: 9999px;
+            padding: 15px 46px;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            box-shadow: 
+                0 10px 28px var(--pink-glow),
+                0 0 22px rgba(255, 118, 158, 0.45),
+                inset 0 2px 3px rgba(255, 255, 255, 0.65);
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .cta-heart-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 
+                0 16px 36px rgba(255, 92, 138, 0.68),
+                0 0 32px rgba(255, 118, 158, 0.65),
+                inset 0 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-heart-btn:active {
+            transform: translateY(-1px) scale(0.99);
+        }
+
+        /* Subtle Floating & Twinkling Animations for Decorative Elements */
+        .float-slow {
+            animation: floatSlow 4.5s ease-in-out infinite;
+        }
+        .float-delayed {
+            animation: floatSlow 5.2s ease-in-out 1.5s infinite;
+        }
+        .twinkle {
+            animation: twinklePulse 3s ease-in-out infinite;
+        }
+        .twinkle-delayed {
+            animation: twinklePulse 3.8s ease-in-out 1.4s infinite;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(4deg); }
+        }
+
+        @keyframes twinklePulse {
+            0%, 100% { opacity: 0.45; transform: scale(0.85); }
+            50% { opacity: 1; transform: scale(1.15); }
+        }
+
+        /* Smooth Page Exit Transition */
+        .page-wrapper {
+            transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .page-wrapper.fade-out {
+            opacity: 0;
+            transform: translateY(-18px) scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =====================================================================
+         AMBIENT BACKGROUND SPARKLES, STARS & HAND-DRAWN HEARTS (EXACT LAYOUT)
+    ====================================================================== -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        
+        <!-- Top-Left White 4-Point Star -->
+        <svg class="absolute top-[15%] left-[16%] w-6 h-6 text-white twinkle" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0 C12.5 8 16 11.5 24 12 C16 12.5 12.5 16 12 24 C11.5 16 8 12.5 0 12 C8 11.5 11.5 8 12 0 Z"/>
+        </svg>
+
+        <!-- Upper-Left Rose Sparkle -->
+        <svg class="absolute top-[18%] left-[37%] w-4 h-4 text-[#D88C9A] twinkle-delayed" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2 C12.4 8.5 15.5 11.6 22 12 C15.5 12.4 12.4 15.5 12 22 C11.6 15.5 8.5 12.4 2 12 C8.5 11.6 11.6 8.5 12 2 Z"/>
+        </svg>
+
+        <!-- Upper-Right Lavender 4-Point Star -->
+        <svg class="absolute top-[19%] right-[40%] w-6 h-6 text-[#B388AE] twinkle" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0 C12.5 8 16 11.5 24 12 C16 12.5 12.5 16 12 24 C11.5 16 8 12.5 0 12 C8 11.5 11.5 8 12 0 Z"/>
+        </svg>
+
+        <!-- Far Upper-Right White Sparkle -->
+        <svg class="absolute top-[22%] right-[19%] w-5 h-5 text-white twinkle-delayed" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0 C12.5 8 16 11.5 24 12 C16 12.5 12.5 16 12 24 C11.5 16 8 12.5 0 12 C8 11.5 11.5 8 12 0 Z"/>
+        </svg>
+
+        <!-- Left Floating Hand-Drawn Outline Heart (Soft Rose) -->
+        <svg class="absolute top-[33%] left-[30%] w-6 h-6 text-[#D88C9A] opacity-75 float-slow hidden sm:block" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 27 C16 27 5 19.2 5 11.5 C5 7.5 8.2 5 11.5 5 C13.8 5 15.3 6.5 16 8.2 C16.7 6.5 18.2 5 20.5 5 C23.8 5 27 7.5 27 11.5 C27 19.2 16 27 16 27 Z" transform="rotate(-14 16 16)"/>
+        </svg>
+
+        <!-- Right Floating Hand-Drawn Dark Berry Heart + Smaller Twin Heart -->
+        <svg class="absolute top-[29%] right-[33%] w-8 h-8 text-[#6D2E46] float-Slow hidden sm:block" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 30 C18 30 7 21 7 12.5 C7 8.5 9.8 6 13 6 C15.5 6 17.2 7.8 18 9.8 C18.8 7.8 20.5 6 23 6 C26.2 6 29 8.5 29 12.5 C29 21 18 30 18 30 Z" transform="rotate(10 18 18)"/>
+        </svg>
+        <svg class="absolute top-[26%] right-[29.5%] w-5 h-5 text-[#C47D90] opacity-80 float-delayed hidden sm:block" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 27 C16 27 6 19.5 6 12 C6 8.5 8.8 6 12 6 C14.2 6 15.5 7.4 16 9 C16.5 7.4 17.8 6 20 6 C23.2 6 26 8.5 26 12 C26 19.5 16 27 16 27 Z" transform="rotate(18 16 16)"/>
+        </svg>
+
+        <!-- Lower-Left Purple 4-Point Sparkle -->
+        <svg class="absolute bottom-[36%] left-[21%] w-4 h-4 text-[#9E6B8E] twinkle" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2 C12.4 8.5 15.5 11.6 22 12 C15.5 12.4 12.4 15.5 12 22 C11.6 15.5 8.5 12.4 2 12 C8.5 11.6 11.6 8.5 12 2 Z"/>
+        </svg>
+
+        <!-- Lower-Right Mauve 4-Point Sparkle -->
+        <svg class="absolute bottom-[25%] right-[18%] w-4 h-4 text-[#B67E96] twinkle-delayed" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2 C12.4 8.5 15.5 11.6 22 12 C15.5 12.4 12.4 15.5 12 22 C11.6 15.5 8.5 12.4 2 12 C8.5 11.6 11.6 8.5 12 2 Z"/>
+        </svg>
+
+        <!-- Bottom-Right Soft Cream Large Star -->
+        <svg class="absolute bottom-[12%] right-[8%] w-12 h-12 text-white opacity-60 twinkle" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0 C12.5 8 16 11.5 24 12 C16 12.5 12.5 16 12 24 C11.5 16 8 12.5 0 12 C8 11.5 11.5 8 12 0 Z"/>
+        </svg>
+
+        <!-- Dynamic Ambient Floating Sparkles Container -->
+        <div id="ambientSparkles"></div>
+    </div>
+
+
+    <!-- =====================================================================
+         MAIN CENTERED APOLOGY HERO CONTENT
+    ====================================================================== -->
+    <main id="heroPage" class="page-wrapper relative z-10 w-full max-w-3xl px-6 py-12 flex flex-col items-center text-center">
+
+        <!-- 1. CIRCULAR COUPLE AVATAR WITH ROYAL CROWN -->
+        <div class="relative mb-7 mt-4">
+            
+            <!-- Tilted Royal Gold & Pink Crown SVG (Perched Top-Left) -->
+            <div class="crown-badge" aria-hidden="true">
+                <svg viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="crownGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFE094"/>
+                            <stop offset="45%" stop-color="#F7B28B"/>
+                            <stop offset="100%" stop-color="#E88896"/>
+                        </linearGradient>
+                        <linearGradient id="crownBaseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#FFE59E"/>
+                            <stop offset="50%" stop-color="#F8C390"/>
+                            <stop offset="100%" stop-color="#EDA19A"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Crown Body -->
+                    <path d="M18 66 L10 30 L33 47 L50 18 L67 47 L90 30 L82 66 Z" 
+                          fill="url(#crownGoldGrad)" stroke="#6D2E46" stroke-width="3.2" stroke-linejoin="round"/>
+                    <!-- Crown Base Rim -->
+                    <rect x="16" y="64" width="68" height="11" rx="5.5" 
+                          fill="url(#crownBaseGrad)" stroke="#6D2E46" stroke-width="3.2"/>
+                    <!-- Crown Tip Pearls -->
+                    <circle cx="10" cy="26" r="4.5" fill="#FF8DA1" stroke="#6D2E46" stroke-width="2.8"/>
+                    <circle cx="33" cy="30" r="3.8" fill="#FFABC0" stroke="#6D2E46" stroke-width="2.5"/>
+                    <circle cx="50" cy="13" r="5" fill="#FF8DA1" stroke="#6D2E46" stroke-width="2.8"/>
+                    <circle cx="67" cy="30" r="3.8" fill="#FFABC0" stroke="#6D2E46" stroke-width="2.5"/>
+                    <circle cx="90" cy="26" r="4.5" fill="#FF8DA1" stroke="#6D2E46" stroke-width="2.8"/>
+                    <!-- Center Heart Gem Inside Crown -->
+                    <path d="M50 56 C50 56 42 50 42 45 C42 42.2 44.2 40.5 46.5 40.5 C48.2 40.5 49.4 41.6 50 43 C50.6 41.6 51.8 40.5 53.5 40.5 C55.8 40.5 58 42.2 58 45 C58 50 50 56 50 56 Z" 
+                          fill="#FF7597" stroke="#6D2E46" stroke-width="2.4" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <!-- Double Soft-Rose Border Avatar Frame -->
+            <div class="avatar-outer-ring">
+                <div class="avatar-inner-circle">
+                    
+                    <!-- =================================================================
+                         HOW TO USE YOUR OWN COUPLE PHOTO ON GITHUB PAGES:
+                         1. Put your image (e.g., "us.jpg") in the same folder as index.html
+                         2. Uncomment the <img> tag below and comment out the <svg> block!
+                    ================================================================== -->
+                    <!--
+                    <img src="us.jpg" alt="Us Together" class="w-full h-full object-cover" />
+                    -->
+
+                    <!-- Default Illustrated Couple with Soft Heart Pattern Backdrop (Matches Design Inspo) -->
+                    <svg viewBox="0 0 160 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Soft Translucent Heart Backdrop Behind Couple -->
+                        <path d="M80 132 C80 132 24 96 24 55 C24 35 40 22 57 22 C69 22 76 29 80 37 C84 29 91 22 103 22 C120 22 136 35 136 55 C136 96 80 132 80 132 Z" 
+                              fill="#E5B8C8" opacity="0.65"/>
+                        
+                        <!-- Tiny Pattern Hearts Inside Backdrop -->
+                        <g fill="#D69FB3" opacity="0.6">
+                            <path d="M52 42 C52 42 46 37 46 33 C46 31 48 29 50 29 C51 29 52 30 52 31 C52 30 53 29 54 29 C56 29 58 31 58 33 C58 37 52 42 52 42 Z"/>
+                            <path d="M108 42 C108 42 102 37 102 33 C102 31 104 29 106 29 C107 29 108 30 108 31 C108 30 109 29 110 29 C112 29 114 31 114 33 C114 37 108 42 108 42 Z"/>
+                            <path d="M80 54 C80 54 75 50 75 46 C75 44 76.5 43 78 43 C79 43 80 44 80 45 C80 44 81 43 82 43 C83.5 43 85 44 85 46 C85 50 80 54 80 54 Z"/>
+                            <path d="M38 66 C38 66 33 62 33 58 C33 56 34.5 55 36 55 C37 55 38 56 38 57 C38 56 39 55 40 55 C41.5 55 43 56 43 58 C43 62 38 66 38 66 Z"/>
+                            <path d="M122 66 C122 66 117 62 117 58 C117 56 118.5 55 120 55 C121 55 122 56 122 57 C122 56 123 55 124 55 C125.5 55 127 56 127 58 C127 62 122 66 122 66 Z"/>
+                        </g>
+
+                        <!-- BOY ILLUSTRATION (Left) -->
+                        <!-- Boy Shoulders/Sweater -->
+                        <path d="M24 160 C24 126 42 114 63 114 C84 114 98 126 98 160 Z" fill="#927593"/>
+                        <!-- Boy Neck -->
+                        <rect x="56" y="96" width="14" height="22" rx="6" fill="#F3C1AD"/>
+                        <!-- Boy Ears -->
+                        <circle cx="44" cy="82" r="5" fill="#F3C1AD"/>
+                        <circle cx="82" cy="82" r="5" fill="#F3C1AD"/>
+                        <!-- Boy Face -->
+                        <path d="M45 72 C45 58 53 52 63 52 C73 52 81 58 81 72 C81 88 73 100 63 100 C53 100 45 88 45 72 Z" fill="#FAD0C0"/>
+                        <!-- Boy Hair -->
+                        <path d="M43 74 C41 60 48 46 63 46 C76 46 84 54 82 72 C80 65 76 60 68 59 C58 58 49 62 45 74 Z" fill="#6E474B"/>
+
+                        <!-- GIRL ILLUSTRATION (Right, slightly in front) -->
+                        <!-- Back Flowing Hair -->
+                        <path d="M76 92 C74 70 84 54 101 54 C118 54 128 70 128 96 C128 115 124 132 118 140 L80 140 Z" fill="#5D3A43"/>
+                        <!-- Girl Shoulders/Top -->
+                        <path d="M68 160 C70 130 84 118 102 118 C120 118 134 130 136 160 Z" fill="#F294A5"/>
+                        <!-- Girl Neck -->
+                        <rect x="96" y="102" width="12" height="20" rx="5" fill="#F5C6B3"/>
+                        <!-- Girl Face -->
+                        <path d="M85 82 C85 69 92 62 102 62 C112 62 119 69 119 82 C119 96 112 107 102 107 C92 107 85 96 85 82 Z" fill="#FCD5C5"/>
+                        <!-- Soft Blush on Cheeks -->
+                        <ellipse cx="92" cy="90" rx="4" ry="2.2" fill="#F497A9" opacity="0.55"/>
+                        <ellipse cx="112" cy="90" rx="4" ry="2.2" fill="#F497A9" opacity="0.55"/>
+                        <!-- Girl Front Hair Swoop -->
+                        <path d="M83 84 C83 68 92 56 104 56 C116 56 123 66 122 86 C117 76 109 70 99 69 C92 68 87 74 83 84 Z" fill="#6E474B"/>
+                    </svg>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 2. MAIN HEADING WITH FLANKING HAND-DRAWN PINK HEARTS -->
+        <div class="relative inline-flex items-center justify-center mb-5 px-4 sm:px-12">
+            
+            <!-- Left Tilted Hand-Drawn Pink Heart -->
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 -mt-12 mr-1 sm:mr-3 shrink-0 float-slow" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g transform="rotate(-22 24 24)">
+                    <path d="M24 39 C24 39 8 28.5 8 17 C8 11.5 12.2 8 17 8 C20.4 8 22.8 10.2 24 12.8 C25.2 10.2 27.6 8 31 8 C35.8 8 40 11.5 40 17 C40 28.5 24 39 24 39 Z" 
+                          fill="#F7A1B5" stroke="#6D2E46" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Inner Sketch Accent Line -->
+                    <path d="M13 15 C13 12.5 15 11 17.5 11" stroke="#FFEBF0" stroke-width="2" stroke-linecap="round"/>
+                </g>
+            </svg>
+
+            <!-- Bold Rounded Berry Display Heading -->
+            <h1 class="font-heading text-4xl sm:text-6xl md:text-[64px] font-bold tracking-tight leading-none select-none">
+                I am really so sorry
+            </h1>
+
+            <!-- Right Tilted Hand-Drawn Pink Heart -->
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 -mt-10 ml-1 sm:ml-3 shrink-0 float-delayed" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g transform="rotate(20 24 24)">
+                    <path d="M24 39 C24 39 8 28.5 8 17 C8 11.5 12.2 8 17 8 C20.4 8 22.8 10.2 24 12.8 C25.2 10.2 27.6 8 31 8 C35.8 8 40 11.5 40 17 C40 28.5 24 39 24 39 Z" 
+                          fill="#F7A1B5" stroke="#6D2E46" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Inner Sketch Accent Line -->
+                    <path d="M30 11.5 C32.5 11.5 34.5 13 34.5 15.5" stroke="#FFEBF0" stroke-width="2" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
+
+
+        <!-- 3. DASHED PILL RECIPIENT BADGE -->
+        <div class="mb-7">
+            <div class="princess-pill text-xl sm:text-2xl">
+                <!-- Customize her nickname here if you'd like! -->
+                yes u, My Princess
+            </div>
+        </div>
+
+
+        <!-- 4. HEARTFELT SUBTITLE PARAGRAPH -->
+        <p class="max-w-xl mx-auto text-base sm:text-[18.5px] font-semibold text-[#3E202D] leading-relaxed mb-10 px-2">
+            I got so caught up in the rush of life that I forgot my most important role:
+            treating you like the royalty you are. Please let me make it up to you.
+        </p>
+
+
+        <!-- 5. GLOWING PILL CTA BUTTON -->
+        <!-- =====================================================================
+             GITHUB PAGES NAVIGATION:
+             By default, clicking this button triggers a smooth heart burst and
+             navigates to "shayari.html" (your second page in the same repo).
+        ====================================================================== -->
+        <div>
+            <a href="shayari.html" id="readHeartBtn" onclick="handleNextPage(event, 'shayari.html')" class="cta-heart-btn">
+                <span>Read My Heart</span>
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================================
+         JAVASCRIPT: SUBTLE SPARKLE GENERATOR & SMOOTH PAGE TRANSITION
+    ====================================================================== -->
+    <script>
+        // 1. Generate subtle tiny background dots & sparkles matching the mockup
+        const sparkleContainer = document.getElementById('ambientSparkles');
+        const dotColors = ['#FFFFFF', '#E6A8B8', '#C89EB8', '#F4C2D7'];
+
+        for (let i = 0; i < 18; i++) {
+            const dot = document.createElement('div');
+            const size = Math.random() * 4 + 3; // 3px to 7px
+            dot.style.width = `${size}px`;
+            dot.style.height = `${size}px`;
+            dot.style.borderRadius = '50%';
+            dot.style.backgroundColor = dotColors[Math.floor(Math.random() * dotColors.length)];
+            dot.style.position = 'absolute';
+            dot.style.top = `${Math.random() * 90 + 5}%`;
+            dot.style.left = `${Math.random() * 90 + 5}%`;
+            dot.style.opacity = Math.random() * 0.55 + 0.25;
+            dot.style.animation = `twinklePulse ${Math.random() * 3 + 2.5}s ease-in-out ${Math.random() * 2}s infinite`;
+            sparkleContainer.appendChild(dot);
+        }
+
+        // 2. Smooth Heart Burst & Page Transition to Page 2 (shayari.html)
+        function handleNextPage(event, targetUrl) {
+            event.preventDefault();
+            const btn = document.getElementById('readHeartBtn');
+            const rect = btn.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Spawn a gentle burst of pastel hearts from the button
+            const heartColors = ['#FF6B95', '#FF94B2', '#6D2E46', '#F7A1B5', '#FFD1DC'];
+            for (let i = 0; i < 16; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.style.position = 'fixed';
+                heart.style.left = `${centerX}px`;
+                heart.style.top = `${centerY}px`;
+                heart.style.color = heartColors[i % heartColors.length];
+                heart.style.fontSize = `${Math.random() * 12 + 14}px`;
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '50';
+                heart.style.transition = 'transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease-out';
+                document.body.appendChild(heart);
+
+                const angle = (Math.PI * 2 * i) / 16 + (Math.random() - 0.5) * 0.4;
+                const dist = Math.random() * 90 + 45;
+                const tx = Math.cos(angle) * dist;
+                const ty = Math.sin(angle) * dist - 20;
+
+                requestAnimationFrame(() => {
+                    heart.style.transform = `translate(${tx}px, ${ty}px) scale(1.25)`;
+                    heart.style.opacity = '0';
+                });
+
+                setTimeout(() => heart.remove(), 800);
+            }
+
+            // Smoothly fade out the hero page, then navigate to shayari.html
+            const heroPage = document.getElementById('heroPage');
+            heroPage.classList.add('fade-out');
+
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 600);
+        }
+    </script>
+</body>
+</html>
